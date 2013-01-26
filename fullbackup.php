@@ -1,4 +1,4 @@
-<!--?php
+<?php
 // Must include cPanel API
 include "xmlapi.php";
  
