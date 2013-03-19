@@ -16,7 +16,7 @@ $backupexpireindays=21; //3 weeks expire time in days, 21 days = 7*24*60
 $backupexpireindays=($backupexpireindays*24)*3600; //convert it to seconds, 24 hours * 60 minutes * 60 seconds
 
 $xmlapi = new xmlapi($source_server_ip);
-$xmlapi--->password_auth($cpanel_account,$cpanel_password);
+$xmlapi->password_auth($cpanel_account,$cpanel_password);
 $xmlapi->set_port('2083');
  
 // Delete any other backup with filetime greater than expire time, before create new backup
