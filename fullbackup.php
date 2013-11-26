@@ -26,7 +26,7 @@ $xmlapi->password_auth($cpanel_account,$cpanel_password);
 $xmlapi->set_port('2083');
  
 // Delete any other backup with filetime greater than expire time, before create new backup
-$conn_id = ftp_connect($ftphost);
+$conn_id = ftp_connect($ftphost) or die ("Could not connect to remote FTP");
 $login_result = ftp_login($conn_id, $ftpacct, $ftppass);
 
 ftp_chdir($conn_id, $logs_dir);
