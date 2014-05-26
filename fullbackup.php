@@ -12,6 +12,7 @@ $cpanel_password = "password"; // cPanel password
 $ftphost = "ip_or_hostname_of_ftp"; // FTP host IP or domain name
 $ftpacct = "userid"; // FTP account
 $ftppass = "password"; // FTP password
+$ftpmode = "ftp"; // FTP mode ("ftp" for active, "passiveftp" for passive)
 $logs_dir = "/"; //FTP Remote Folder
 $email_notify = 'your_email@domain.com'; // Email address for backup notification
 $backupexpireindays=21; //3 weeks expire time in days, 21 days = 7*24*60
@@ -47,7 +48,7 @@ foreach ($files as $filename) {
 ftp_close($conn_id);
  
 $api_args = array(
-                           'passiveftp',
+                           $ftpmode,
                            $ftphost,
                            $ftpacct,
                            $ftppass,
